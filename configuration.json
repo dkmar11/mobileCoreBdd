@@ -1,0 +1,11 @@
+{
+  "environment": "testing",
+  "mobile":{
+    "implicitWait": 15000,
+    "appium":{
+      "hostname": "192.168.27.187",
+      "port": 4723,
+      "logLevel": "info"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "testing":{
+    "capabilities": {
+      "appium:plataformVersion": "13",
+      "appium:deviceName": "samsung SM-A145M/DS",
+      "appium:app": "",
+      "appium:automationName": "UIAutomator2",
+      "platformName": "Android",
+      "appium:autoGrantPermissions": true,
+      "appium:noReset": true
+    }
+  }
+}
