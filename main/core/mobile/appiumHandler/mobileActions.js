@@ -1,5 +1,5 @@
-const driverManager = require('../../core/mobile/mobileManager');
-const logger = require('../../core/utils/logger');
+const driverManager = require('../../../core/mobile/mobileManager');
+const logger = require('../../../core/utils/logger');
 const MobileWaitings = require('./mobileWaitings');
 
 /**
@@ -13,6 +13,12 @@ class MobileActions {
     logger.info(`clicking on ${selector}`);
     const element = await MobileWaitings.waitingTo(selector)
     await element.click();
+  }
+
+  static async sendKeys(selector, keys) {
+    logger.info(`sending keys ${keys} to ${selector}`);
+    const element = await MobileWaitings.waitingTo(selector)
+    await element.setValue(keys);
   }
 }
 

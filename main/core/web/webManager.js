@@ -1,4 +1,4 @@
-const andriod = require("./andriod")
+const andriod = require("./chrome")
 /**
  * 
  */
@@ -12,9 +12,9 @@ class MobileManager {
   /**
    * method to initialize the driver
    */
-  async init(capabilities) {
+  async init() {
     if (!this.sessionExists) {
-      this.driver = await andriod(capabilities);
+      this.driver = await andriod();
       this.sessionExists = true;
     }
   }

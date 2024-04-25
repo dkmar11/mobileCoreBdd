@@ -1,6 +1,4 @@
-const driverManager = require('../../core/mobile/mobileManager');
-const logger = require('../../core/utils/logger');
-
+const driverManager = require('../../../core/mobile/mobileManager');
 
 class MobileWaitings {
 
