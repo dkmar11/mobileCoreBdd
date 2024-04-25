@@ -1,14 +1,18 @@
 const MobileActions = require("../core/mobile/appiumHandler/mobileActions");
 const MobileGettings = require("../core/mobile/appiumHandler/mobileGettings");
-
+const whatsappConstanst = require("./constanst")
 class conversationWhastapp{
   constructor(){
-    this.inputField = "//android.widget.EditText[@resource-id='com.whatsapp:id/entry']"
+    this.inputField = `//android.widget.EditText[${whatsappConstanst.resorceId}/entry']`
     this.sendBtn = "//android.widget.ImageButton[@content-desc='Enviar']"
+    this.optionsBtn = "//android.widget.ImageView[@content-desc='Más opciones']"
+    this.moreOptionsBtn = `//android.widget.TextView[${whatsappConstanst.resorceId}/title' and @text='Más']`
+    this.clearOptionBtn = `//android.widget.TextView[${whatsappConstanst.resorceId}/title' and @text='Vaciar chat']`
+    this.clearChatBtn = "//android.widget.Button[@resource-id='android:id/button1']"
   }
 
   messages(message){
-    return `//android.widget.TextView[@resource-id='com.whatsapp:id/message_text' and @text='${message}']`
+    return `//android.widget.TextView[${whatsappConstanst.resorceId}/message_text' and @text='${message}']`
   }
   async sendMessage(message){
     await MobileActions.sendKeys(this.inputField, message);
@@ -21,10 +25,10 @@ class conversationWhastapp{
   }
 
   async clearChat(){
-    //android.widget.ImageView[@content-desc="Más opciones"]
-    //android.widget.LinearLayout[@resource-id="com.whatsapp:id/content"]//*[@text="Más"]
-    //android.widget.LinearLayout[@resource-id="com.whatsapp:id/content"]//*[@text="Vaciar chat"]
-    //android.widget.Button[@resource-id="android:id/button1"]
+    await MobileActions.clickOn(this.optionsBtn);
+    await MobileActions.clickOn(this.moreOptionsBtn);
+    await MobileActions.clickOn(this.clearOptionBtn);
+    await MobileActions.clickOn(this.clearChatBtn);
   }
 }
 

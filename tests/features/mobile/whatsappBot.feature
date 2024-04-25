@@ -1,4 +1,4 @@
-@mobile @Whatsapp
+@mobile @Whatsapp @clearChat
 Feature: Whatsapp bot
   Scenario: el bot responde deacuerdo a lo esperado en las opciones 4-8
     Given que abro whatsapp
@@ -110,9 +110,9 @@ Feature: Whatsapp bot
       2- Hablar con un Operador
       3- Finalizar
       """
-    And envio "1" en el chat
+    And envio "3" en el chat
     And uno de los mensajes de respuesta es:
       """
-      ¡Hola!👋 Soy MI-A, asistente virtual del Banco Ganadero y te ayudaré en todo lo que necesites.
+      Gracias por comunicarse con el Banco Ganadero, queremos conocer tu experiencia, favor te pedimos realizar esta breve encuesta https://chatbotbg.questionpro.com
       """
     
