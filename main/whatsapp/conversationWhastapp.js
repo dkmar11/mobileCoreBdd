@@ -11,7 +11,7 @@ class conversationWhastapp{
     this.clearChatBtn = "//android.widget.Button[@resource-id='android:id/button1']"
   }
 
-  messages(message){
+  messageTextView(message){
     return `//android.widget.TextView[${whatsappConstanst.resorceId}/message_text' and @text='${message}']`
   }
   async sendMessage(message){
@@ -19,9 +19,9 @@ class conversationWhastapp{
     await MobileActions.clickOn(this.sendBtn);
   }
 
-  async getMessagesAsElements(message){
-    const elements = await MobileGettings.getElements(this.messages(message))
-    return elements
+  async getMessage(message){
+    const text = await MobileGettings.getText(this.messageTextView(message))
+    return text
   }
 
   async clearChat(){

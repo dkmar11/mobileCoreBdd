@@ -1,7 +1,6 @@
-@mobile @Whatsapp @clearChat
+@mobile @whatsapp @clearChat @record
 Feature: Whatsapp bot
   Scenario: el bot responde deacuerdo a lo esperado en las opciones 4-8
-    Given que abro whatsapp
     When selecciono mi contacto "Bot Prod"
     And envio "hola" en el chat
     Then uno de los mensajes de respuesta es:
@@ -51,7 +50,6 @@ Feature: Whatsapp bot
       """
 
   Scenario: el bot responde deacuerdo a lo esperado en las opciones 4
-    Given que abro whatsapp
     When selecciono mi contacto "Bot Prod"
     And envio "hola" en el chat
     Then uno de los mensajes de respuesta es:
